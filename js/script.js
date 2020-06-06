@@ -18,22 +18,10 @@ onscroll = function () {
 };
 
 function textDuneAnime() {
-    textDune.animate(
-        [{
-                transform: 'translateX(0)'
-            },
-            {
-                transform: 'translateX(-100%)'
-            },
-            {
-                transform: 'translateX(0)'
-            }
-        ], {
-            duration: 1500,
-            delay: 1000,
-            easing: 'cubic-bezier(0.1, 0.8, 0.6, 1)'
-        }
-    );
+    textDune.classList.remove('titleAnime');
+    setTimeout(function () {
+        textDune.classList.add('titleAnime');
+    }, 200);
 };
 
 btnTop.addEventListener('click', textDuneAnime);
