@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+:root {
+    --yellow: rgb(242, 169, 80);
+    --darkyellow: rgb(242, 138, 46);
+    --orange: rgb(242, 103, 22);
+    --darkorange: rgb(230, 80, 0);
+    --brown: rgb(166, 65, 28);
+    --darkbrown: rgb(80, 30, 0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--darkyellow);
+}
+
+/*  HEADER  */
+
+.header {
+    position: relative;
+    height: 100vh;
+    background-image: url("../img/desert_2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 1;
+    opacity: 1;
+    animation: desertOpacity 1.5s linear both;
+}
+
+@keyframes desertOpacity {
+    0% {
+        opacity: .1;
+    }
+
+    100% {}
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+    left: 0%;
+    padding: 0 92px;
+    background-color: rgba(0, 0, 0, .3);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 50px;
+}
+
+.titleAnime {
+    animation: duneAnime .8s .7s cubic-bezier(0.1, 0.8, 0.8, 1) both;
+}
+
+@keyframes duneAnime {
+    0% {
+        transform: translateY(-1000%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*  NAVI  */
+
+.allNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    z-index: 2;
+    position: fixed;
+}
+
+.upUpUp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    color: var(--darkbrown);
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 4;
+    visibility: hidden;
+    transition-property: background-color, color;
+    transition-duration: .3s;
+}
+
+.upUpUp:hover {
+    background-color: var(--darkbrown);
+    color: var(--darkyellow);
+}
+
+.show {
+    visibility: visible;
+}
+
+.fa-angle-double-up {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--orange);
+    z-index: 3;
+    animation: navAnime .8s .7s cubic-bezier(0.1, 0.8, 0.8, 1) both;
+}
+
+@keyframes navAnime {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {}
+}
+
+.menuList {
+    display: flex;
+    list-style: none;
+    z-index: 5;
+}
+
+.menuList a {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-decoration: none;
+    padding: 17px 30px;
+    color: rgb(255, 255, 255);
+    border-left: 1px solid var(--brown);
+    transition: .2s;
+}
+
+.menuList li:last-child a {
+    border-right: 1px solid var(--brown);
+}
+
+.menuList a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--brown);
+    transition: .2s;
+    z-index: -1;
+}
+
+.menuList a:hover::after {
+    height: 100%;
+}
+
+.menuList a:hover {
+    color: var(--yellow);
+}
+
+.menuLogo {
+    display: flex;
+    align-items: center;
+}
+
+.menuLogo div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.menuLogo div:nth-child(1) {
+    background-color: var(--brown);
+}
+
+.menuLogo div:nth-child(2) {
+    background-color: var(--darkorange);
+}
+
+.menuLogo div:nth-child(3) {
+    background-color: var(--darkyellow);
+}
+
+.menuName {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    padding: 15px 5px;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1024px) {
+    .mainNav {
+        padding: 0 50px 0 100px;
+        height: 54px;
+    }
+
+    .menuList a {
+        font-size: 16px;
+        letter-spacing: 5px;
+        padding: 15px 20px;
+    }
+
+    .menuLogo div {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+    }
+
+    .menuName {
+        font-size: 16px;
+    }
+}
+
+/*  MAIN  */
+/*  GALERY  */
+
+#galery {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: var(--yellow);
+    margin: 0 auto;
+}
+
+#galery::before {
+    content: "";
+    display: block;
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--darkyellow);
+}
+
+#galery h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: var(--brown);
+    width: 80%;
+    margin: 50px auto 30px;
+    word-wrap: break-word;
+}
+
+.galeryText {
+    width: 80%;
+    margin: 0 auto 50px;
+    color: var(--brown);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 150%;
+}
+
+.galeryText span {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+
+.photo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo div {
+    width: 33.33%;
+    border: 1px solid var(--yellow);
+    overflow: hidden;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    transition-duration: 1s;
+}
+
+.photo img:hover {
+    transform: scale(1.3) rotate(10deg);
+}
+
+@media (max-width: 1024px) {
+    #galery h2 {
+        font-size: 48px;
+        margin: 40px auto 24px;
+    }
+
+    .galeryText {
+        font-size: 14px;
+    }
+
+    .galeryText span {
+        font-size: 14px;
+    }
+
+    .photo div {
+        width: 50%;
+    }
+}
+
+/*  MOTTO  */
+
+#motto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 100%;
+    background-color: var(--yellow);
+    margin: 0 auto;
+}
+
+#motto::before {
+    content: "";
+    display: block;
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--darkyellow);
+}
+
+.mottoText {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0
+}
+
+.mottoText p {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 10px;
+    text-align: left;
+    line-height: 150%;
+    color: var(--brown);
+}
+
+.mottoText p:nth-child(2) {
+    font-style: normal;
+    text-align: right;
+    padding-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .mottoText p {
+        font-size: 14px;
+    }
+}
+
+/*  ABOUT  */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: var(--yellow);
+    margin: 0 auto 50px;
+}
+
+#about::before {
+    content: "";
+    display: block;
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--darkyellow);
+}
+
+#about h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: var(--brown);
+    width: 80%;
+    margin: 50px auto 0;
+    word-wrap: break-word;
+}
+
+/*  PASSIONS  */
+
+.passions {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto 50px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 33.33%;
+    height: auto;
+}
+
+.icon img {
+    width: 200px;
+    margin: 50px auto 20px;
+}
+
+.icon p {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 100%;
+    color: var(--brown);
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .icon {
+        width: 50%;
+    }
+
+    .icon p {
+        font-size: 14px;
+    }
+}
+
+/*  FOOTER  */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: var(--orange);
+}
+
+.footerName {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    padding: 15px 20px 15px 0;
+    color: rgb(255, 255, 255);
+}
+
+.footerLogo {
+    display: flex;
+}
+
+.footerLogo div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.footerLogo div:nth-child(1) {
+    background-color: var(--brown);
+}
+
+.footerLogo div:nth-child(2) {
+    background-color: var(--darkorange);
+}
+
+.footerLogo div:nth-child(3) {
+    background-color: var(--darkyellow);
+}
