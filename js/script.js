@@ -30,7 +30,7 @@ function textDuneAnime() {
             }
         ], {
             duration: 1500,
-            delay: 500,
+            delay: 1000,
             easing: 'cubic-bezier(0.1, 0.8, 0.6, 1)'
         }
     );
