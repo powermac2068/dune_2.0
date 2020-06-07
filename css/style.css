@@ -48,8 +48,9 @@ body {
 .title {
     position: absolute;
     width: 100%;
-    bottom: 15%;
+    height: 100px;
     left: 0;
+    bottom: 15%;
     padding: 0 92px;
     background-color: rgba(0, 0, 0, .3);
     font-family: 'Montserrat', sans-serif;
@@ -58,6 +59,7 @@ body {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     letter-spacing: 50px;
+    line-height: 100px;
 }
 
 .titleAnime {
@@ -66,11 +68,11 @@ body {
 
 @keyframes duneAnime {
     0% {
-        transform: translateY(-1000%);
+        bottom: calc(100% + 100px);
     }
 
     100% {
-        transform: translateY(0);
+        bottom: 15%;
     }
 }
 
