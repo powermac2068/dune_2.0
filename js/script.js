@@ -1,9 +1,10 @@
-var textDune = document.querySelector(".title");
-var btnTop = document.querySelector(".upUpUp");
-var appended = false;
+const btnTop = document.querySelector('.upUpUp');
+const textDune = document.querySelector('.title');
+const navigation = document.querySelector('.allNav');
+let appended = false;
 
 onscroll = function () {
-    var scrollToTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollToTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (scrollToTop > 500) {
         if (!appended) {
             btnTop.classList.add('show');
@@ -17,11 +18,24 @@ onscroll = function () {
     };
 };
 
-function textDuneAnime() {
+btnTop.addEventListener('click', () => {
     textDune.classList.remove('titleAnime');
-    setTimeout(function () {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
         textDune.classList.add('titleAnime');
-    }, 200);
-};
+    }, 100);
+});
 
-btnTop.addEventListener('click', textDuneAnime);
+
+navigation.addEventListener('click', (evt) => {
+    const link = evt.target.closest('.menuListLink');
+    if (!link) {
+        return;
+    }
+    evt.preventDefault();
+    const scrollToElement = link.getAttribute('href');
+    document.querySelector(scrollToElement).scrollIntoView({
+        behavior: 'smooth'
+    });
+    location.href = scrollToElement;
+});
