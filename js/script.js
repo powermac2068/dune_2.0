@@ -1,20 +1,13 @@
 const btnTop = document.querySelector('.upUpUp');
 const textDune = document.querySelector('.title');
 const navigation = document.querySelector('.allNav');
-let appended = false;
 
-onscroll = function () {
+window.onscroll = () => {
     const scrollToTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (scrollToTop > 500) {
-        if (!appended) {
-            btnTop.classList.add('show');
-            appended = true;
-        };
+        btnTop.classList.add('show');
     } else {
-        if (appended) {
-            btnTop.classList.remove('show');
-            appended = false;
-        };
+        btnTop.classList.remove('show');
     };
 };
 
@@ -26,7 +19,6 @@ btnTop.addEventListener('click', () => {
     }, 100);
 });
 
-
 navigation.addEventListener('click', (evt) => {
     const link = evt.target.closest('.menuListLink');
     if (!link) {
@@ -37,5 +29,4 @@ navigation.addEventListener('click', (evt) => {
     document.querySelector(scrollToElement).scrollIntoView({
         behavior: 'smooth'
     });
-    location.href = scrollToElement;
 });

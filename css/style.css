@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 10px;
 }
 
 :root {
@@ -157,7 +156,7 @@ body {
     z-index: 5;
 }
 
-.menuList a {
+.menuListLink {
     position: relative;
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
@@ -167,15 +166,15 @@ body {
     text-decoration: none;
     padding: 17px 30px;
     color: rgb(255, 255, 255);
-    border-left: 1px solid var(--brown);
+    /* border-left: 1px solid var(--brown); */
     transition: .1s;
 }
 
-.menuList li:last-child a {
+/* .menuList li:last-child a {
     border-right: 1px solid var(--brown);
-}
+} */
 
-.menuList a::after {
+.menuListLink::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -187,11 +186,11 @@ body {
     z-index: -1;
 }
 
-.menuList a:hover::after {
+.menuListLink:hover::after {
     height: 100%;
 }
 
-.menuList a:hover {
+.menuListLink:hover {
     color: var(--yellow);
 }
 
@@ -200,22 +199,22 @@ body {
     align-items: center;
 }
 
-.menuLogo div {
+.menuLogoCircle {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.menuLogo div:nth-child(1) {
+.menuLogoCircle:nth-child(1) {
     background-color: var(--brown);
 }
 
-.menuLogo div:nth-child(2) {
+.menuLogoCircle:nth-child(2) {
     background-color: var(--darkorange);
 }
 
-.menuLogo div:nth-child(3) {
+.menuLogoCircle:nth-child(3) {
     background-color: var(--darkyellow);
 }
 
@@ -229,19 +228,19 @@ body {
     color: rgb(255, 255, 255);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .mainNav {
         padding: 0 50px 0 100px;
         height: 54px;
     }
 
-    .menuList a {
+    .menuListLink {
         font-size: 16px;
         letter-spacing: 5px;
         padding: 15px 20px;
     }
 
-    .menuLogo div {
+    .menuLogoCircle {
         width: 22px;
         height: 22px;
         margin-right: 12px;
@@ -255,7 +254,7 @@ body {
 /*  MAIN  */
 /*  GALERY  */
 
-#galery {
+.galery {
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -264,7 +263,7 @@ body {
     margin: 0 auto;
 }
 
-#galery::before {
+.galery::before {
     content: "";
     display: block;
     height: 60px;
@@ -273,7 +272,7 @@ body {
     background-color: var(--darkyellow);
 }
 
-#galery h2 {
+.galery h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
     font-size: 60px;
@@ -329,8 +328,8 @@ body {
     transform: scale(1.3) rotate(10deg);
 }
 
-@media (max-width: 1024px) {
-    #galery h2 {
+@media (max-width: 1200px) {
+    .galery h2 {
         font-size: 48px;
         margin: 40px auto 24px;
     }
@@ -350,7 +349,7 @@ body {
 
 /*  MOTTO  */
 
-#motto {
+.motto {
     display: flex;
     flex-wrap: wrap;
     width: 75%;
@@ -359,48 +358,72 @@ body {
     margin: 0 auto;
 }
 
-#motto::before {
+.motto::before {
     content: "";
     display: block;
     height: 60px;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--darkyellow);
+    background-color: var(--yellow);
 }
 
-.mottoText {
+.motto h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: var(--brown);
+    width: 80%;
+    margin: 50px auto 30px;
+    word-wrap: break-word;
+}
+
+.mottoQuotation {
     width: 80%;
     margin: 0 auto;
-    padding: 50px 0
+    /* padding: 50px 0 */
 }
 
-.mottoText p {
+.mottoText,
+.mottoAuthor {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-weight: 200;
     font-size: 20px;
-    font-style: italic;
     letter-spacing: 10px;
-    text-align: left;
     line-height: 150%;
     color: var(--brown);
 }
 
-.mottoText p:nth-child(2) {
+.mottoText {
+    font-style: italic;
+    text-align: left;
+}
+
+.mottoAuthor {
     font-style: normal;
     text-align: right;
     padding-top: 30px;
 }
 
-@media (max-width: 1024px) {
-    .mottoText p {
+@media (max-width: 1200px) {
+    .motto h2 {
+        font-size: 48px;
+        margin: 40px auto 24px;
+    }
+
+    .mottoText,
+    .mottoAuthor {
         font-size: 14px;
     }
 }
 
 /*  ABOUT  */
 
-#about {
+.about {
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -409,16 +432,16 @@ body {
     margin: 0 auto 50px;
 }
 
-#about::before {
+.about::before {
     content: "";
     display: block;
     height: 60px;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--darkyellow);
+    background-color: var(--yellow);
 }
 
-#about h2 {
+.about h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
     font-size: 60px;
@@ -467,7 +490,7 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .icon {
         width: 50%;
     }
@@ -484,14 +507,14 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90px;
+    height: 60px;
     background-color: var(--orange);
 }
 
 .footerName {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 2px;
     line-height: 100%;
     padding: 15px 20px 15px 0;
@@ -502,21 +525,21 @@ footer {
     display: flex;
 }
 
-.footerLogo div {
-    width: 25px;
-    height: 25px;
+.footerLogoCircle {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.footerLogo div:nth-child(1) {
+.footerLogoCircle:nth-child(1) {
     background-color: var(--brown);
 }
 
-.footerLogo div:nth-child(2) {
+.footerLogoCircle:nth-child(2) {
     background-color: var(--darkorange);
 }
 
-.footerLogo div:nth-child(3) {
+.footerLogoCircle:nth-child(3) {
     background-color: var(--darkyellow);
 }
