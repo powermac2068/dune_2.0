@@ -1,0 +1,44 @@
+.about {
+    @include sections();
+
+    &::before {
+        @include section-before();
+    }
+
+    .about__title {
+        @include section-title();
+    }
+
+    .passions {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto 50px;
+
+        .passions__icon {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 33.33%;
+            height: auto;
+
+            .passions__image {
+                width: 200px;
+                margin: 50px auto 20px;
+            }
+
+            .passions__signature {
+                font-family: 'Oswald', sans-serif;
+                text-transform: uppercase;
+                font-weight: 200;
+                font-size: 20px;
+                letter-spacing: 10px;
+                text-align: center;
+                line-height: 100%;
+                color: $brown;
+                margin: 0 auto;
+            }
+        }
+    }
+}

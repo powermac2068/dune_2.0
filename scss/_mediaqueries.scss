@@ -1,0 +1,63 @@
+@media (max-width: 1200px) {
+    .navigation {
+        height: 50px;
+
+        .logo__circle1,
+        .logo__circle2,
+        .logo__circle3 {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+        }
+
+        .logo__name {
+            font-size: 16px;
+        }
+
+        .menu__link {
+            font-size: 16px;
+            letter-spacing: 5px;
+            padding: 15px 20px;
+        }
+    }
+
+    .galery__title {
+        font-size: 48px;
+        margin: 40px auto 24px;
+    }
+
+    .galery__text {
+        font-size: 14px;
+
+        .galery__text--bold {
+            font-size: 14px;
+        }
+    }
+
+    .photo__container {
+        width: 50%;
+    }
+
+    .motto__title {
+        font-size: 48px;
+        margin: 40px auto 24px;
+    }
+
+    .motto__text,
+    .motto__author {
+        font-size: 14px;
+    }
+
+    .about__title {
+        font-size: 48px;
+        margin: 40px auto 24px;
+    }
+
+    .passions__icon {
+        width: 50%;
+
+        .passions__signature {
+            font-size: 14px;
+        }
+    }
+}

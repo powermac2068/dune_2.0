@@ -1,0 +1,53 @@
+.galery {
+    @include sections();
+
+    &::before {
+        @include section-before();
+    }
+
+    .galery__title {
+        @include section-title();
+    }
+
+    .galery__text {
+        width: 80%;
+        margin: 0 auto 50px;
+        color: $brown;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 20px;
+        letter-spacing: 10px;
+        text-align: center;
+        line-height: 150%;
+
+        .galery__text--bold {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 10px;
+        }
+    }
+
+    .photo {
+        display: flex;
+        flex-wrap: wrap;
+
+        .photo__container {
+            width: 33.33%;
+            border: 1px solid $yellow;
+            overflow: hidden;
+
+            .photo_image {
+                display: block;
+                width: 100%;
+                transition-duration: 1s;
+
+                &:hover {
+                    transform: scale(1.3) rotate(10deg);
+                }
+            }
+        }
+    }
+}

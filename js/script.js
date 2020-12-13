@@ -1,26 +1,26 @@
-const btnTop = document.querySelector('.upUpUp');
-const textDune = document.querySelector('.title');
-const navigation = document.querySelector('.allNav');
+const btnTop = document.querySelector('.nav__top');
+const textDune = document.querySelector('.header__title');
+const navigation = document.querySelector('.nav');
 
 window.onscroll = () => {
     const scrollToTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (scrollToTop > 500) {
-        btnTop.classList.add('show');
+        btnTop.classList.add('nav__top--show');
     } else {
-        btnTop.classList.remove('show');
+        btnTop.classList.remove('nav__top--show');
     };
 };
 
 btnTop.addEventListener('click', () => {
-    textDune.classList.remove('titleAnime');
+    textDune.classList.remove('header__title--animation');
     window.scrollTo(0, 0);
     setTimeout(() => {
-        textDune.classList.add('titleAnime');
+        textDune.classList.add('header__title--animation');
     }, 100);
 });
 
 navigation.addEventListener('click', (evt) => {
-    const link = evt.target.closest('.menuListLink');
+    const link = evt.target.closest('.menu__link');
     if (!link) {
         return;
     }

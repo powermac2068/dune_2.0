@@ -1,0 +1,39 @@
+.motto {
+    @include sections();
+    flex-wrap: wrap;
+
+    &::before {
+        @include section-before();
+    }
+
+    .motto__title {
+        @include section-title();
+    }
+
+    .motto__quotation {
+        width: 80%;
+        margin: 0 auto;
+
+        .motto__text,
+        .motto__author {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 20px;
+            letter-spacing: 10px;
+            line-height: 150%;
+            color: var(--brown);
+        }
+
+        .motto__text {
+            font-style: italic;
+            text-align: left;
+        }
+
+        .motto__author {
+            font-style: normal;
+            text-align: right;
+            padding-top: 30px;
+        }
+    }
+}

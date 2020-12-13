@@ -1,0 +1,43 @@
+@mixin box-flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+/* default:
+justify-content: flex-start;
+align-items: stretch;
+flex-direction: row; */
+
+@mixin sections() {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: $yellow;
+    margin: 0 auto;
+}
+
+@mixin section-title() {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: $brown;
+    width: 80%;
+    margin: 50px auto 30px;
+    word-wrap: break-word;
+}
+
+@mixin section-before() {
+    content: "";
+    display: block;
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: $yellow;
+}

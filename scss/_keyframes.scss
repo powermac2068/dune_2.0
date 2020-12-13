@@ -1,0 +1,25 @@
+@keyframes background-animation {
+    0% {}
+
+    100% {
+        transform: translate(-5%, 0) scale(1.2);
+    }
+}
+
+@keyframes title-animation {
+    0% {
+        transform: translateY(calc(-85vh - 100px));
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes navigation-animation {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {}
+}

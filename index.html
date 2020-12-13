@@ -6,77 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Diuna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="fas/css/all.css" rel="stylesheet">
-    <link href="favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="fas/css/all.css">
+    <link rel="icon" href="icons/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="icons/favicon-62.png" sizes="62x62" type="image/png">
 </head>
 
 <body>
     <header class="header">
-        <div class="headerBackground"></div>
-        <h1 class="title titleAnime">diuna</h1>
+        <div class="header__background"></div>
+        <h1 class="header__title header__title--animation">diuna</h1>
     </header>
 
-    <nav class="allNav">
-        <div class="mainNav">
-            <div class="menuLogo">
-                <div class="menuLogoCircle"></div>
-                <div class="menuLogoCircle"></div>
-                <div class="menuLogoCircle"></div>
-                <p class="menuName">3 kolory pomarańczowy</p>
+    <nav class="nav">
+        <div class="navigation">
+            <div class="logo">
+                <div class="logo__circle1"></div>
+                <div class="logo__circle2"></div>
+                <div class="logo__circle3"></div>
+                <p class="logo__name">3 kolory pomarańczowy</p>
             </div>
-            <ul class="menuList">
+            <ul class="menu">
                 <li>
-                    <a href="#galery" class="menuListLink">galeria</a>
+                    <a href="#galery" class="menu__link">galeria</a>
                 </li>
                 <li>
-                    <a href="#motto" class="menuListLink">motto</a>
+                    <a href="#motto" class="menu__link">motto</a>
                 </li>
                 <li>
-                    <a href="#about" class="menuListLink">o mnie</a>
+                    <a href="#about" class="menu__link">o mnie</a>
                 </li>
             </ul>
         </div>
-        <div class="upUpUp">
+        <div class="nav__top">
             <i class="fas fa-angle-double-up"></i>
         </div>
     </nav>
 
     <main>
         <section id="galery" class="galery">
-            <h2>pustynna galeria</h2>
-            <p class="galeryText"><span>Diuna</span> (Arrakis) to najważniejsza planeta we wszechświecie, jedyna, na
+            <h2 class="galery__title">pustynna galeria</h2>
+            <p class="galery__text"><span class="galery__text--bold">Diuna</span> (Arrakis) to najważniejsza planeta we
+                wszechświecie, jedyna, na
                 której znajdują się złoża melanżu – substancji przedłużającej życie, a także umożliwiającej
                 jasnowidzenie niezbędne do uniknięcia niebezpieczeństw ponadwymiarowych podróży kosmicznych. Powstawanie
                 melanżu związane jest z cyklem rozwojowym czerwi pustyni – olbrzymich istot, żyjących w piaskach
                 Arrakis.</p>
             <div class="photo">
-                <div><img src="img/sahara-1.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-2.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-3.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-4.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-5.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-6.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-7.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-8.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-9.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-10.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-11.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-12.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-13.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-14.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-15.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-16.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-17.jpg" alt="bezdroża Sahary"></div>
-                <div><img src="img/sahara-18.jpg" alt="bezdroża Sahary"></div>
+                <div class="photo__container"><img src="img/sahara-1.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-2.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-3.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-4.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-5.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-6.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-7.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-8.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-9.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-10.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-11.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-12.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-13.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-14.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-15.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-16.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-17.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
+                <div class="photo__container"><img src="img/sahara-18.jpg" class="photo_image" alt="bezdroża Sahary">
+                </div>
             </div>
         </section>
         <section id="motto" class="motto">
-            <h2>motto</h2>
-            <blockquote class="mottoQuotation">
-                <p class="mottoText">
+            <h2 class="motto__title">motto</h2>
+            <blockquote class="motto__quotation">
+                <p class="motto__text">
                     Nie wolno się bać, strach zabija duszę.
                     <br>Strach to mała śmierć, a wielkie unicestwienie.
                     <br>Stawię mu czoła.
@@ -85,48 +107,49 @@
                     <br>Którędy przeszedł strach, tam nie ma nic.
                     <br>Jestem tylko ja.
                 </p>
-                <p class="mottoAuthor">litania Bene Gesserit<br>przeciw strachowi</p>
+                <p class="motto__author">litania Bene Gesserit<br>przeciw strachowi</p>
             </blockquote>
         </section>
         <section id="about" class="about">
-            <h2>co mnie kręci</h2>
+            <h2 class="about__title">co mnie kręci</h2>
             <div class="passions">
-                <div class="icon">
-                    <img src="img/icon-bg-01.png" alt="fantastyka">
-                    <p>fantastyka</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-01.png" class="passions__image" alt="fantastyka">
+                    <p class="passions__signature">fantastyka</p>
                 </div>
-                <div class="icon">
-                    <img src="img/icon-bg-02.png" alt="grafika">
-                    <p>grafika</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-02.png" class="passions__image" alt="grafika">
+                    <p class="passions__signature">grafika</p>
                 </div>
-                <div class="icon">
-                    <img src="img/icon-bg-03.png" alt="Magic the Gathering">
-                    <p>magic:<br>the gathering</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-03.png" class="passions__image" alt="Magic the Gathering">
+                    <p class="passions__signature">magic:<br>the gathering</p>
                 </div>
-                <div class="icon">
-                    <img src="img/icon-bg-04.png" alt="off road">
-                    <p>off road</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-04.png" class="passions__image" alt="off road">
+                    <p class="passions__signature">off road</p>
                 </div>
-                <div class="icon">
-                    <img src="img/icon-bg-05.png" alt="aikido">
-                    <p>aikido</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-05.png" class="passions__image" alt="aikido">
+                    <p class="passions__signature">aikido</p>
                 </div>
-                <div class="icon">
-                    <img src="img/icon-bg-06.png" alt="podróże">
-                    <p>podróże</p>
+                <div class="passions__icon">
+                    <img src="img/icon-bg-06.png" class="passions__image" alt="podróże">
+                    <p class="passions__signature">podróże</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p class="footerName">&copy; 3 kolory pomarańczowy</p>
-        <div class="footerLogo">
-            <div class="footerLogoCircle"></div>
-            <div class="footerLogoCircle"></div>
-            <div class="footerLogoCircle"></div>
+    <footer class="footer">
+        <p class="footer__name">&copy; 3 kolory pomarańczowy</p>
+        <div class="footer__logo">
+            <div class="footer__circle1"></div>
+            <div class="footer__circle2"></div>
+            <div class="footer__circle3"></div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 

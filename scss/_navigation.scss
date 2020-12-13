@@ -1,0 +1,122 @@
+.nav {
+    @include box-flex(space-between, flex-end, column);
+    position: fixed;
+    z-index: 2;
+
+    .navigation {
+        @include box-flex(space-between, center, row);
+        padding: 0 50px 0 100px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: $orange;
+        z-index: 3;
+        animation: navigation-animation 1s cubic-bezier(0.1, 0.8, 0.8, 1) both;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            .logo__circle1,
+            .logo__circle2,
+            .logo__circle3 {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+
+            .logo__circle1 {
+                background-color: $brown;
+            }
+
+            .logo__circle2 {
+                background-color: $darkorange;
+            }
+
+            .logo__circle3 {
+                background-color: $darkyellow;
+            }
+
+            .logo__name {
+                font-family: 'Oswald', sans-serif;
+                font-weight: 500;
+                font-size: 18px;
+                letter-spacing: 2px;
+                line-height: 100%;
+                padding: 15px 5px;
+                color: $white;
+            }
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            z-index: 5;
+
+            .menu__link {
+                position: relative;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 200;
+                font-size: 18px;
+                text-transform: uppercase;
+                letter-spacing: 10px;
+                text-decoration: none;
+                padding: 17px 30px;
+                color: $white;
+                transition: .1s;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $brown;
+                    transition: .1s;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    color: $yellow;
+
+                    &:hover::after {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav__top {
+        @include box-flex(center, center, row);
+        position: fixed;
+        bottom: 60px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        color: $darkbrown;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 4;
+        visibility: hidden;
+        transition-property: background-color, color;
+        transition-duration: .3s;
+
+        .fa-angle-double-up {
+            font-size: 40px;
+        }
+
+        &:hover {
+            background-color: $darkbrown;
+            color: $darkyellow;
+        }
+    }
+
+    .nav__top--show {
+        visibility: visible;
+    }
+}
