@@ -1,6 +1,8 @@
 const btnTop = document.querySelector('.nav__top');
 const textDune = document.querySelector('.header__title');
 const navigation = document.querySelector('.nav');
+const windowWidth = window.innerWidth;
+const logoName = document.querySelector('.logo__name');
 
 window.onscroll = () => {
     const scrollToTop = document.documentElement.scrollTop || document.body.scrollTop;

@@ -1,25 +1,11 @@
 .footer {
     @include box-flex(center, center, row);
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     width: 100%;
     height: 60px;
     background-color: $orange;
 
-    .footer__name {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-        letter-spacing: 2px;
-        line-height: 100%;
-        padding: 15px 20px 15px 0;
-        color: $white;
-    }
-
-    .footer__logo {
-        @include box-flex(flex-start, stretch, row);
-        // display: flex;
+    &__logo {
+        @include box-flex(flex-start, center, row);
 
         .footer__circle1,
         .footer__circle2,
@@ -40,6 +26,16 @@
 
         .footer__circle3 {
             background-color: $darkyellow;
+        }
+
+        .footer__name {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 2px;
+            line-height: 100%;
+            padding: 15px 5px;
+            color: $white;
         }
     }
 }

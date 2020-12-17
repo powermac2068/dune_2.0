@@ -1,43 +1,75 @@
 .about {
-    @include sections();
+    @include sections(100%);
 
-    &::before {
-        @include section-before();
+    @include laptop {
+        @include sections(75%);
     }
 
-    .about__title {
-        @include section-title();
+    &::before {
+        @include section-before(30px);
+
+        @include laptop {
+            @include section-before(60px);
+        }
+    }
+
+    &__title {
+        @include section-title(45px, 10px);
+
+        @include laptop {
+            @include section-title(60px, 20px);
+        }
     }
 
     .passions {
-        display: flex;
-        justify-content: space-around;
+        @include box-flex(space-around, stretch, row);
         flex-wrap: wrap;
         width: 80%;
-        margin: 0 auto 50px;
+        margin: 0 auto;
 
-        .passions__icon {
-            display: flex;
-            flex-direction: column;
+        &__icon {
+            @include box-flex(flex-start, stretch, column);
             flex-wrap: wrap;
-            width: 33.33%;
-            height: auto;
+            width: 50%;
+            margin: 0 auto 50px;
+
+            @include tablet {
+                width: 33.33%;
+            }
 
             .passions__image {
-                width: 200px;
-                margin: 50px auto 20px;
+                width: 100px;
+                margin: 0 auto 10px;
+
+                @include laptop {
+                    width: 150px;
+                }
+
+                @include desktop {
+                    width: 200px;
+                }
             }
 
             .passions__signature {
                 font-family: 'Oswald', sans-serif;
                 text-transform: uppercase;
                 font-weight: 200;
-                font-size: 20px;
-                letter-spacing: 10px;
+                font-size: 14px;
+                letter-spacing: 7px;
                 text-align: center;
                 line-height: 100%;
                 color: $brown;
                 margin: 0 auto;
+
+                @include laptop {
+                    font-size: 16px;
+                    letter-spacing: 8px;
+                }
+
+                @include desktop {
+                    font-size: 20px;
+                    letter-spacing: 10px;
+                }
             }
         }
     }

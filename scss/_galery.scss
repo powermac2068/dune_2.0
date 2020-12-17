@@ -1,32 +1,54 @@
 .galery {
-    @include sections();
+    @include sections(100%);
+
+    @include laptop {
+        @include sections(75%);
+    }
 
     &::before {
-        @include section-before();
+        @include section-before(30px);
+
+        @include laptop {
+            @include section-before(60px);
+        }
     }
 
-    .galery__title {
-        @include section-title();
+    &__title {
+        @include section-title(45px, 10px);
+
+        @include laptop {
+            @include section-title(60px, 20px);
+        }
     }
 
-    .galery__text {
+    &__text {
         width: 80%;
         margin: 0 auto 50px;
         color: $brown;
         font-family: 'Oswald', sans-serif;
         text-transform: uppercase;
         font-weight: 200;
-        font-size: 20px;
-        letter-spacing: 10px;
+        font-size: 14px;
+        letter-spacing: 7px;
         text-align: center;
         line-height: 150%;
 
-        .galery__text--bold {
+        @include laptop {
+            font-size: 20px;
+            letter-spacing: 10px;
+        }
+
+        &--bold {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 10px;
+            font-size: 14px;
+            letter-spacing: 7px;
+
+            @include laptop {
+                font-size: 20px;
+                letter-spacing: 10px;
+            }
         }
     }
 
@@ -34,10 +56,18 @@
         display: flex;
         flex-wrap: wrap;
 
-        .photo__container {
-            width: 33.33%;
+        &__container {
+            width: 100%;
             border: 1px solid $yellow;
             overflow: hidden;
+
+            @include tablet {
+                width: 50%;
+            }
+
+            @include laptop {
+                width: 33.33%;
+            }
 
             .photo_image {
                 display: block;
