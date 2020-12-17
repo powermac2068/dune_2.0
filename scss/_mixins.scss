@@ -10,20 +10,20 @@ justify-content: flex-start;
 align-items: stretch;
 flex-direction: row; */
 
-@mixin sections() {
+@mixin sections($section-width) {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: $section-width;
     height: 100%;
     background-color: $yellow;
     margin: 0 auto;
 }
 
-@mixin section-title() {
+@mixin section-title($font-size, $letter-spacing) {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
-    font-size: 60px;
-    letter-spacing: 20px;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
     text-align: center;
     text-transform: uppercase;
     line-height: 100%;
@@ -33,11 +33,35 @@ flex-direction: row; */
     word-wrap: break-word;
 }
 
-@mixin section-before() {
+@mixin section-before($section-before-height) {
     content: "";
     display: block;
-    height: 60px;
+    height: $section-before-height;
     width: 100%;
     margin: 0 auto;
     background-color: $yellow;
+}
+
+@mixin phone {
+    @media (min-width: #{ $phone-width }) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{ $tablet-width }) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{ $laptop-width }) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{ $desktop-width }) {
+        @content;
+    }
 }
