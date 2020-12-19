@@ -15,7 +15,15 @@
     }
 
     &__title {
-        @include section-title(45px, 10px);
+        @include section-title(30px, 10px);
+
+        @include phone {
+            @include section-title(39px, 13px);
+        }
+
+        @include tablet {
+            @include section-title(48px, 16px);
+        }
 
         @include laptop {
             @include section-title(60px, 20px);

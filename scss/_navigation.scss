@@ -13,7 +13,6 @@
         height: 50px;
         background-color: $orange;
         z-index: 3;
-        animation: navigation-animation 1s cubic-bezier(0.1, 0.8, 0.8, 1) both;
 
         .logo__name {
             display: none;
@@ -22,19 +21,8 @@
         @include tablet {
             @include box-flex(space-between, center, row);
             padding: 0 30px 0 50px;
-        }
+            animation: navigation-animation 1s cubic-bezier(0.1, 0.8, 0.8, 1) both;
 
-        @include laptop {
-            @include box-flex(space-between, center, row);
-            padding: 0 50px 0 75px;
-            height: 60px;
-        }
-
-        @include desktop {
-            padding: 0 50px 0 100px;
-        }
-
-        @include tablet {
             .logo {
                 @include box-flex(flex-start, center, row);
 
@@ -73,6 +61,8 @@
         }
 
         @include laptop {
+            padding: 0 50px 0 75px;
+            height: 60px;
 
             .logo__circle1,
             .logo__circle2,
@@ -86,6 +76,10 @@
                 font-size: 18px;
                 padding: 15px 5px;
             }
+        }
+
+        @include desktop {
+            padding: 0 50px 0 100px;
         }
 
         .menu {
@@ -123,11 +117,21 @@
                     z-index: -1;
                 }
 
-                &:hover {
+                &:active {
                     color: $yellow;
 
-                    &:hover::after {
+                    &::after {
                         height: 100%;
+                    }
+                }
+
+                @include laptop {
+                    &:hover {
+                        color: $yellow;
+
+                        &::after {
+                            height: 100%;
+                        }
                     }
                 }
             }
@@ -137,25 +141,41 @@
     .nav__top {
         @include box-flex(center, center, row);
         position: fixed;
-        bottom: 60px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
+        bottom: 50px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
         color: $darkbrown;
         border-radius: 5px;
-        cursor: pointer;
         z-index: 4;
         visibility: hidden;
         transition-property: background-color, color;
         transition-duration: .3s;
 
         .fa-angle-double-up {
-            font-size: 40px;
+            font-size: 32px;
         }
 
-        &:hover {
+        &:active {
             background-color: $darkbrown;
             color: $darkyellow;
+        }
+
+        @include laptop {
+            bottom: 60px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+
+            .fa-angle-double-up {
+                font-size: 40px;
+            }
+
+            &:hover {
+                background-color: $darkbrown;
+                color: $darkyellow;
+            }
         }
     }
 

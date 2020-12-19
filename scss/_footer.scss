@@ -1,11 +1,11 @@
 .footer {
     @include box-flex(center, center, row);
     width: 100%;
-    height: 60px;
+    height: 50px;
     background-color: $orange;
 
     &__logo {
-        @include box-flex(flex-start, center, row);
+        @include box-flex(center, center, row);
 
         .footer__circle1,
         .footer__circle2,
@@ -13,7 +13,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 10px;
         }
 
         .footer__circle1 {
@@ -29,13 +29,38 @@
         }
 
         .footer__name {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 2px;
-            line-height: 100%;
-            padding: 15px 5px;
-            color: $white;
+            display: none;
+
+            @include phone {
+                display: inherit;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 2px;
+                line-height: 100%;
+                padding: 10px 5px;
+                color: $white;
+            }
         }
+
+        @include laptop {
+
+            .footer__circle1,
+            .footer__circle2,
+            .footer__circle3 {
+                width: 25px;
+                height: 25px;
+                margin-right: 15px;
+            }
+
+            .footer__name {
+                font-size: 18px;
+                padding: 15px 5px;
+            }
+        }
+    }
+
+    @include laptop {
+        height: 60px;
     }
 }

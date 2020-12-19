@@ -15,7 +15,10 @@ window.onscroll = () => {
 
 btnTop.addEventListener('click', () => {
     textDune.classList.remove('header__title--animation');
-    window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
     setTimeout(() => {
         textDune.classList.add('header__title--animation');
     }, 100);
